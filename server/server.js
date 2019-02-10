@@ -1,5 +1,5 @@
 require('./config/config')
-const { PORT } = process.env
+const { PORT, URLDB } = process.env
 
 const express = require('express')
 const mongoose = require('mongoose')
@@ -20,7 +20,7 @@ const config = {
     autoIndex: false,
     useNewUrlParser: true,
 };
-mongoose.connect('mongodb://localhost:27017/cafe', config)
+mongoose.connect(URLDB, config)
 
 
 app.listen(PORT, () => {
